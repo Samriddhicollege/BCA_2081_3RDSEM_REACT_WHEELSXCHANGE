@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WheelsXChange - Find Your Perfect Ride</title>
+    <link rel="stylesheet" href="bikes.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+    <nav class="nav">
+      <div class="logo-container">
+        <img src="../assets/logo.png">
+        <div class="logo">Wheels<span>X</span>Change</div>
+      </div>
+        <ul class="menu">
+            <li><a href="../index.html">Home</a></li>
+            <li class="dropdown"><a href="#buy">Buy</a>
+                <ul class="dropdown-menu">
+                    <li><a href="../cars/cars.html" target="_blank">Cars</a></li>
+                    <li><a href="../bikes/bikes.html" target="_blank">Bikes</a></li>
+                </ul>
+            </li>
+            <li class="dropdown"><a href="#sell">Sell</a>
+                <ul class="dropdown-menu">
+                    <li><a href="../Car sell/sellcars.html" target="_blank">Sell Car</a></li>
+                    <li><a href="../Bike sell/sellbikes.html" target="_blank">Sell Bike</a></li>
+                </ul>
+            </li>
+            <li><a href="../contact/contatcus.html">Contact</a></li>
+            <li class="login-item"><a href="../login-form/login.html" class="login-btn">Login</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+    <h1>Find your perfect ride<i class="fa fa-motorcycle" aria-hidden="true"></i></h1>
+    <div class="container1">
+        <div class="bikes-section">
+            <div class="bikes-grid" id="bikesGrid">
+            </div>
+            <div class="no-results" id="noResults" style="display: none;">
+                No bikes found matching your criteria.
+            </div>
+        </div>
+
+        <div class="filters">
+            <h3>Filter Bikes</h3>
+            
+            <input type="text" class="search-bar" id="searchBar" placeholder="Search by make, model, or seller...">
+            
+            <div class="filter-group">
+                <label for="brand">Brand</label>
+                <select id="brand">
+                            <option value="">All Brands</option>
+                            <option value="Tvs">TVS</option>
+                            <option value="Honda">Honda</option>
+                            <option value="Hero">Hero</option>
+                            <option value="Royal Enfield">Royal Enfield</option>
+                            <option value="Bajaj">Bajaj</option>
+                            <option value="Yamaha">Yamaha</option>
+                            <option value="Ktm">KTM</option>
+                            <option value="Jawa">Jawa</option>
+                            <option value="Triumph">Triumph</option>
+                            <option value="Cfmoto">CF Moto</option>
+                            <option value="Crossx">Cross X</option>
+                            <option value="Aprilla">Aprilla</option>
+                            <option value="Beneli">Beneli</option>
+                            <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="year">Year</label>
+                <select id="year">
+                    <option value="">All Years</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
+                    <option value="2015">2015</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label>Price Range</label>
+                <div class="price-range">
+                    <input type="number" id="minPrice" placeholder="Min">
+                    <span>-</span>
+                    <input type="number" id="maxPrice" placeholder="Max">
+                </div>
+            </div>
+
+
+            <div class="filter-group">
+                <label for="running">Km running (km)</label>
+                <input type="number" id="running" placeholder="e.g., 50000">
+            </div>
+            <button class="reset-btn" onclick="resetFilters()">Reset Filters</button>
+        </div>
+    </div>
+    <!-- Supabase Auth -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../login-form/supabase-config.js"></script>
+    <script src="bikes.js"></script>
+    <script src="../home-auth.js"></script>
+</body>
+</html>

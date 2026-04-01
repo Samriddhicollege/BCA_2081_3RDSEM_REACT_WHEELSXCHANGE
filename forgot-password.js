@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Your Car - WheelsXChange</title>
+    <link rel="stylesheet" href="sellcars.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo-container">
+                <img src="../assets/logo.png" alt="WheelsXChange Logo">
+                <div class="logo">Wheels<span>X</span>Change</div>
+            </div>
+            <ul class="menu">
+                <li><a href="../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#buy">Buy</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../cars/cars.html">Cars</a></li>
+                        <li><a href="../bikes/bikes.html">Bikes</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#sell">Sell</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../Car sell/sellcars.html">Sell Car</a></li>
+                        <li><a href="../Bike sell/sellbikes.html">Sell Bike</a></li>
+                    </ul>
+                </li>
+                <li><a href="../contact/contatcus.html">Contact</a></li>
+                <!-- This will be dynamically updated by JavaScript -->
+                <li class="login-item">
+                    <a href="../login-form/login.html" class="login-btn">Login</a>
+                </li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="header1">
+            <h1 style="color: #000;">List your Car</h1>
+            <p>List your vehicle and get the best offers from verified buyers</p>
+        </div>
+
+        <div class="success-message" id="successMessage">
+            Your Car listing has been submitted successfully!
+        </div>
+
+        <form id="sellCarForm">
+            <!-- Vehicle Information -->
+            <div class="form-section">
+                <h2 class="section-title" style="color: #000;">Vehicle Information</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="make">Brand *</label>
+                        <select id="make" name="make" required>
+                            <option value="">Select Brand</option>
+                            <option value="Toyota">Toyota</option>
+                            <option value="Honda">Honda</option>
+                            <option value="Ford">Ford</option>
+                            <option value="Tata">Tata</option>
+                            <option value="Nissan">Nissan</option>
+                            <option value="BMW">BMW</option>
+                            <option value="Mercedes-Benz">Mercedes-Benz</option>
+                            <option value="Audi">Audi</option>
+                            <option value="Volkswagen">Volkswagen</option>
+                            <option value="Hyundai">Hyundai</option>
+                            <option value="Kia">Kia</option>
+                            <option value="Other">Others</option>
+                        </select>
+                        <div class="error-message">Please select a make</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="model">Model *</label>
+                        <input type="text" id="model" name="model" placeholder="e.g., Hilux, Nexon, Raptor" required>
+                        <div class="error-message">Please enter the model</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="year">Year *</label>
+                        <input type="text" id="year" name="year" placeholder="e.g., 2010, 2020, 2015" required>
+                        <div class="error-message">Please select a year</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mileage">Running *</label>
+                        <input type="number" id="mileage" name="mileage" placeholder="50000" required>
+                        <div class="error-message">Please enter valid km running</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fuelType">Fuel Type *</label>
+                        <select id="fuelType" name="fuelType" required>
+                            <option value="">Select Fuel Type</option>
+                            <option value="Petrol">Petrol</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="Hybrid">Hybrid</option>
+                            <option value="Electric">Electric</option>
+                        </select>
+                        <div class="error-message">Please select fuel type</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bodyType">Body Type *</label>
+                        <select id="bodyType" name="bodyType" required>
+                            <option value="">Select Body Type</option>
+                            <option value="Sedan">Sedan</option>
+                            <option value="SUV">SUV</option>
+                            <option value="Hatchback">Hatchback</option>
+                            <option value="Pickup">Pickup</option>
+                            <option value="Coupe">Coupe</option>
+                        </select>
+                        <div class="error-message">Please select body type</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing -->
+            <div class="form-section">
+                <h2 class="section-title" style="color: #000;">Pricing</h2>
+                <div class="form-grid">
+                    <div class="form-group price-input">
+                        <label for="price">Asking Price *</label>
+                        <input type="number" id="price" name="price" placeholder="25000" required>
+                        <div class="error-message">Please enter a valid price</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="negotiable">Price Negotiable?</label>
+                        <select id="negotiable" name="negotiable">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Images -->
+            <div class="form-section">
+                <h2 class="section-title" style="color: #000;">Photos</h2>
+                <div class="form-group full-width">
+                    <div class="image-upload" id="imageUpload" style="border: 2px dashed #ddd; padding: 40px; text-align: center; cursor: pointer; background: #f9f9f9; border-radius: 10px; transition: all 0.3s;">
+                        <i class="fas fa-cloud-upload-alt" style="font-size: 3em; color: #ff6b35; margin-bottom: 15px;"></i>
+                        <h3>Upload Photo</h3>
+                        <p>Drag & drop image here or click to select</p>
+                        
+                        <input type="file" id="images" name="images" accept="image/*" style="display: none;">
+                    </div>
+                    <div class="preview-images" id="previewImages" style="display: flex; flex-wrap: wrap; margin-top: 20px;"></div>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="form-section">
+                <h2 class="section-title" style="color: #000;">Contact Information</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="sellerName">Full Name *</label>
+                        <input type="text" id="sellerName" name="sellerName" placeholder="John Doe" required>
+                        <div class="error-message">Please enter your name</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        <div class="error-message">Please enter a valid email</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="9863736737" required>
+                        <div class="error-message">Please enter a valid phone number</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location *</label>
+                        <input type="text" id="location" name="location" placeholder="District, City" required>
+                        <div class="error-message">Please enter your location</div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">List My Vehicle</button>
+        </form>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../login-form/supabase-config.js"></script>
+    <script src="sellcars.js"></script>
+    <script src="../home-auth.js"></script>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menu = document.querySelector('.menu');
+            
+            if (menuToggle && menu) {
+                menuToggle.addEventListener('click', function() {
+                    menu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
